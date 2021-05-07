@@ -5,7 +5,7 @@ class EarlyStoppingCallback(tf.keras.callbacks.Callback):
     
     def on_epoch_end(self, epoch, logs=None):
         print(logs.get('accuracy'))
-        if logs.get('accuracy') > .999:
+        if logs.get('accuracy') > .99:
             self.model.stop_training = True
 
     def on_train_end(self, logs=None):
